@@ -1,5 +1,36 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+
+/* body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -14,4 +45,7 @@ a {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
-}
+} */
+
+
+

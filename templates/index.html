@@ -1,14 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask App</title>
+    <title>Consultation des Scrutins</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Bienvenue dans votre application Flask !</h1>
-    <h1>Bienvenue, {{ name }} !</h1>
-    <a href="{{ url_for('about') }}">À propos</a>
+    <h1>Liste des Scrutins</h1>
+    <ul>
+        {% for scrutin in scrutins %}
+            <li>
+                <strong>{{ scrutin.title }}</strong><br>
+                Participants : {{ scrutin.participants }}<br>
+                Description : {{ scrutin.description }}
+            </li>
+        {% else %}
+            <p>Aucun scrutin disponible pour le moment.</p>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('statistics') }}">Voir les statistiques</a>
 </body>
 </html>
+

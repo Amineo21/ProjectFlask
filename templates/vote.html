@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Vote</title>
+</head>
+<body>
+    <h1>Vote pour le scrutin : {{ scrutin.title }}</h1>
+    <form method="POST" action="{{ url_for('votes.participate', scrutin_id=scrutin._id) }}">
+        <label for="pseudo">Pseudonyme</label>
+        <input type="text" name="pseudo" id="pseudo" required>
+
+        <h2>Choisissez vos options</h2>
+        {% for option in scrutin.options %}
+        <div>
+            <input type="checkbox" name="choices" value="{{ option }}" id="option-{{ loop.index }}">
+            <label for="option-{{ loop.index }}">{{ option }}</label>
+        </div>
+        {% endfor %}
+
+        <button type="submit">Voter</button>
+    </form>
+</body>
+</html>

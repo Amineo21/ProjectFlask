@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Scrutin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Bienvenue sur la plateforme de Scrutin</h1>
+
+    <h2>Derniers Scrutins Créés</h2>
+    <ul>
+        {% for scrutin in recent_scrutins %}
+        <li>{{ scrutin.title }} - Créé le {{ scrutin.created_at.strftime("%d/%m/%Y") }}</li>
+        {% else %}
+        <p>Aucun scrutin récent.</p>
+        {% endfor %}
+    </ul>
+
+    <h2>Scrutins Actifs</h2>
+    <ul>
+        {% for scrutin in active_scrutins %}
+        <li>{{ scrutin.title }} - {{ scrutin.participants }} participants</li>
+        {% else %}
+        <p>Aucun scrutin actif.</p>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('scrutins.create_scrutin_page') }}">Créer un scrutin</a>
+</body>
+</html>

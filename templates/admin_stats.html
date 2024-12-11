@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Statistiques</title>
+</head>
+<body>
+    <h1>Statistiques d’utilisation</h1>
+
+    <h2>Top 5 des scrutins avec le plus de participants</h2>
+    <ul>
+        {% for scrutin in top_scrutins %}
+        <li>{{ scrutin.title }} : {{ scrutin.participants }} participants</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Répartition des votes par année de naissance</h2>
+    <ul>
+        {% for entry in votes_by_year %}
+        <li>Année {{ entry['_id'] }} : {{ entry['count'] }} votes</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Moyenne du nombre d’options par scrutin</h2>
+    <p>{{ avg_options | round(2) }} options en moyenne</p>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Résultats</title>
+</head>
+<body>
+    <h1>Résultats pour le scrutin : {{ scrutin.title }}</h1>
+    <ul>
+        {% for option, votes in results %}
+        <li>{{ option }} : {{ votes }} votes</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

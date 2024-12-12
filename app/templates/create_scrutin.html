@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Créer un scrutin</h2>
+<form method="POST">
+    <label for="question">Question :</label>
+    <input type="text" name="question" id="question" required>
+    <br>
+    <label for="options">Options (séparées par des virgules) :</label>
+    <input type="text" name="options" id="options" required>
+    <br>
+    <label for="start_date">Date de début :</label>
+    <input type="date" name="start_date" id="start_date" required>
+    <br>
+    <label for="end_date">Date de fin :</label>
+    <input type="date" name="end_date" id="end_date" required>
+    <br>
+    <button type="submit">Créer</button>
+</form>
+{% endblock %}

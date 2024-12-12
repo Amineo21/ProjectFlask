@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plateforme de Scrutin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Plateforme de Scrutin</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Accueil</a>
+            <a href="{{ url_for('register') }}">S'inscrire</a>
+            <a href="{{ url_for('create_scrutin') }}">Créer un scrutin</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

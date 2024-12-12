@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Bienvenue sur la plateforme de scrutin</h2>
+<p>Voici les 10 derniers scrutins actifs :</p>
+<ul>
+    {% for scrutin in scrutins %}
+    <li>
+        <a href="{{ url_for('vote', scrutin_id=scrutin['_id']) }}">{{ scrutin['question'] }}</a> 
+        - Actif jusqu'au {{ scrutin['end_date'] }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

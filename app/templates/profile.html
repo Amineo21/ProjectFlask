@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Profil de {{ user['username'] }}</h2>
+<form method="POST">
+    <label for="email">Email :</label>
+    <input type="email" name="email" id="email" value="{{ user['email'] }}" required>
+    <br>
+    <label for="birth_year">Année de naissance :</label>
+    <input type="number" name="birth_year" id="birth_year" value="{{ user['birth_year'] }}" required>
+    <br>
+    <button type="submit">Mettre à jour</button>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Inscription</h2>
+<form method="POST">
+    <label for="username">Pseudonyme :</label>
+    <input type="text" name="username" id="username" required>
+    <br>
+    <label for="email">Email :</label>
+    <input type="email" name="email" id="email" required>
+    <br>
+    <label for="birth_year">Année de naissance :</label>
+    <input type="number" name="birth_year" id="birth_year" required>
+    <br>
+    <button type="submit">S'inscrire</button>
+</form>
+{% endblock %}

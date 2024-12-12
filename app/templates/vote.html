@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Vote pour le scrutin : {{ scrutin['question'] }}</h2>
+<form method="POST">
+    {% for option in scrutin['options'] %}
+    <label>
+        <input type="checkbox" name="votes" value="{{ option }}"> {{ option }}
+    </label>
+    <br>
+    {% endfor %}
+    <input type="hidden" name="username" value="{{ session.get('username', 'Anonyme') }}">
+    <button type="submit">Voter</button>
+</form>
+{% endblock %}
